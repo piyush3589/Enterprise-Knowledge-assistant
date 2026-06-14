@@ -2,7 +2,7 @@
 
 > Ask questions about industrial equipment in plain English. Get precise, cited answers from technical documentation — instantly.
 
-A **multi-agent RAG system** built for industrial IoT environments. Three specialized AI agents work in sequence: a router classifies your query, a retriever finds the most relevant documents using hybrid search, and an answer agent synthesises a structured response with sources and confidence scores.
+A **RAG pipeline with LLM routing** built for industrial IoT environments. Three specialized AI agents work in sequence: a router classifies your query, a retriever finds the most relevant documents using hybrid search, and an answer agent synthesises a structured response with sources and confidence scores.
 
 ---
 
@@ -47,7 +47,7 @@ User Query
     │
     ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    Multi-Agent Pipeline                     │
+│                    Modular RAG pipeline                     │
 │                                                             │
 │  ┌──────────────┐                                           │
 │  │ Router Agent │ → VECTOR_SEARCH / CLARIFICATION /         │
