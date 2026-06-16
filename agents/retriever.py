@@ -130,6 +130,7 @@ class HybridRetriever:
                     top_n=top_k,
                     model="rerank-english-v3.0",
                 )
+                print(f"[Retriever] Cohere reranking applied — top result score: {rerank_response.results[0].relevance_score:.3f}")
                 reranked = []
                 for result in rerank_response.results:
                     doc_id, v = top_candidates[result.index]
