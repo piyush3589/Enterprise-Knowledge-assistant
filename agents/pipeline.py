@@ -34,7 +34,15 @@ llm = ChatGroq(
 # ── Agent 1: Router ──────────────────────────────────────────────────────────
 
 def router_agent(state: AgentState) -> AgentState:
-prompt = f"""You are a routing agent for an Industrial IoT knowledge base assistant.
+    """
+    Classifies the query and decides next action:
+    - VECTOR_SEARCH: answerable from knowledge base
+    - CLARIFICATION: query too vague, need more info
+    - OUT_OF_SCOPE: not in the industrial IoT domain
+    """
+    print(f"[Router] Classifying query: {state.query}")
+
+    prompt = f"""You are a routing agent for an Industrial IoT knowledge base assistant.
 The knowledge base contains: equipment specifications, maintenance procedures, 
 safety protocols, troubleshooting guides, and compliance documents for industrial 
 equipment (boilers, pumps, pipelines, sensors).
@@ -65,7 +73,6 @@ Rules:
 
     print(f"[Router] Decision: {routing.query_type} — {routing.reasoning}")
     return AgentState(**{**state.model_dump(), "routing": routing})
-
 
 # ── Agent 2: Retriever ───────────────────────────────────────────────────────
 
