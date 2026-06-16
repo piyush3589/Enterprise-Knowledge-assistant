@@ -31,9 +31,8 @@ class HybridRetriever:
             return
 
         client = chromadb.PersistentClient(path=CHROMA_PATH)
-        ef = embedding_functions.SentenceTransformerEmbeddingFunction(
-            model_name="all-MiniLM-L6-v2"
-        )
+        ef = embedding_functions.DefaultEmbeddingFunction()
+
         self._collection = client.get_collection(
             name="industrial_knowledge_base",
             embedding_function=ef,
