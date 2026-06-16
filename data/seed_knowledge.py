@@ -384,9 +384,7 @@ def chunk_documents(documents: list, chunk_size: int = 500, chunk_overlap: int =
 
 def seed():
     client = chromadb.PersistentClient(path=CHROMA_PATH)
-    ef = embedding_functions.SentenceTransformerEmbeddingFunction(
-        model_name="all-MiniLM-L6-v2"
-    )
+    ef = embedding_functions.DefaultEmbeddingFunction()
     collection = client.get_or_create_collection(
         name="industrial_knowledge_base",
         embedding_function=ef,
