@@ -40,7 +40,7 @@ MAINTENANCE SCHEDULE:
 - Annual: Full inspection by certified engineer, pressure vessel test
 
 CRITICAL COMPONENTS:
-- Control valve CV-201: Regulates steam output, inspect every 6 months
+- Control valve CV-201: Regulates steam output, inspect every 6 months. Unusual noise indicates internal wear or cavitation — isolate and inspect seat and disc.
 - Safety relief valve SRV-101: Must not exceed 9.5 bar, replace every 2 years
 - Water level controller WLC-01: Calibrate quarterly
 - Burner management system BMS-01: Software update annually
@@ -136,6 +136,8 @@ MAINTENANCE PROCEDURE: Centrifugal Pump Bearing Replacement
 DOCUMENT: MP-PUMP-007
 REVISION: 2
 APPLICABLE EQUIPMENT: Grundfos CR series, Plant B
+ESTIMATED TOTAL TIME: 4-6 hours including 30-minute run-in monitoring period.
+
 
 TRIGGER CONDITIONS:
 - Vibration exceeds 6.0 mm/s RMS for more than 15 minutes
