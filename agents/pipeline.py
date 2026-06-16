@@ -34,16 +34,7 @@ llm = ChatGroq(
 # ── Agent 1: Router ──────────────────────────────────────────────────────────
 
 def router_agent(state: AgentState) -> AgentState:
-    """
-    Classifies the query and decides next action:
-    - VECTOR_SEARCH: answerable from knowledge base
-    - CLARIFICATION: query too vague, need more info
-    - OUT_OF_SCOPE: not in the industrial IoT domain
-    """
-    print(f"[Router] Classifying query: {state.query}")
-
-    prompt = f"""You are a routing agent for an Industrial IoT knowledge base assistant.
-
+prompt = f"""You are a routing agent for an Industrial IoT knowledge base assistant.
 The knowledge base contains: equipment specifications, maintenance procedures, 
 safety protocols, troubleshooting guides, and compliance documents for industrial 
 equipment (boilers, pumps, pipelines, sensors).
@@ -59,9 +50,10 @@ Classify this query and respond ONLY with JSON (no markdown, no backticks):
 }}
 
 Rules:
-- VECTOR_SEARCH: query is about equipment, maintenance, safety, troubleshooting, compliance
-- CLARIFICATION: query is too vague (e.g. "tell me about the pump" — which pump?)
+- VECTOR_SEARCH: query is about equipment, maintenance, safety, troubleshooting, or compliance — even if vague, attempt retrieval first
+- CLARIFICATION: ONLY use when the query cannot possibly be answered without more information (e.g. "fix it" with no context whatsoever)
 - OUT_OF_SCOPE: completely unrelated to industrial equipment (e.g. HR policies, finance)
+- When in doubt between VECTOR_SEARCH and CLARIFICATION, always choose VECTOR_SEARCH
 - refined_query should expand abbreviations and add domain context for better retrieval
 """
 
