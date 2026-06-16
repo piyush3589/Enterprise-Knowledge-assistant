@@ -355,7 +355,7 @@ RETURN TO SERVICE: Vibration must be < 2.5 mm/s RMS after any bearing or alignme
 ]
 
 
-def chunk_documents(documents: list, chunk_size: int = 500, chunk_overlap: int = 100):
+def chunk_documents(documents: list, chunk_size: int = 800, chunk_overlap: int = 200):
     """Split documents into smaller chunks for better retrieval precision."""
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=chunk_size,
