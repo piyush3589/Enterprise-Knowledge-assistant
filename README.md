@@ -127,7 +127,7 @@ This combination dramatically reduces missed retrievals that pure vector search 
 ### Prerequisites
 - Python 3.11+
 - Groq API key — free at [console.groq.com](https://console.groq.com)
-- Cohere API key — free at [cohere.com](https://cohere.com) *(optional — enables reranking)*
+- Cohere API key — free at [cohere.com](https://cohere.com) 
 
 ### Setup
 
