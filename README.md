@@ -1,4 +1,4 @@
-# 🏭 Agentic Enterprise Knowledge Assistant
+# 🏭 Enterprise Knowledge Assistant
 
 > Ask questions about industrial equipment in plain English. Get precise, cited answers from technical documentation — instantly.
 
